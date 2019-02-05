@@ -1,0 +1,1 @@
+# PWA-QRCode-Reader
