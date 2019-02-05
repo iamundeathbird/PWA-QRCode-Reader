@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+    background-color: gray;
+}
+
+#video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%; 
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 5px;
+}
+
+.btn {
+    width: 50px;
+    height:50px;
+    border-radius: 100%;
+    font-size: 12px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #ddd;
+    color: black;
+}
+.canh
+{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%; 
+    min-height: 100%;
+    visibility: hidden;
+    text-align: center;
+    background-color: gray;
+    display: table;
+}
+.canh2
+{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%; 
+    min-height: 100%;
+    text-align: center;
+    background-color: transparent;
+    display: table;
+}

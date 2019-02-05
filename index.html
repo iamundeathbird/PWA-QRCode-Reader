@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="./css/styles.css" />
+<link rel="stylesheet" href="./css/modal.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./js/build/qcode-decoder.min.js"></script>
+<script src="./js/codeprocess.js"></script>
+</head>
+<body>
+    <h1 id="logo" style="display:none;"></h1>
+       
+<video id="video" autoplay playsinline></video>
+<div class="canh2" >
+    
+    <div style="display: table-cell;vertical-align: middle;">
+      <canvas id="canvas2" ></canvas>
+     </div>
+</div>
+<div id="myModal" class="modal">
+
+       
+        <div class="modal-content">
+         <h3>The URL of the Code :</h3>   
+         <p id="modal-contents" style="word-wrap:break-word;;"></p>
+         <table style="table-layout: fixed;width: 100%;">
+            <tr>
+               
+         <td align="right"><button id="modal-go" class="btnm" >Go</button>
+        <button id="modal-cancel" class="btnm" >Cancel</button></td>
+        
+            </tr>
+        </table>
+        </div>
+      
+      </div>
+<div class="content">
+      
+ <table style="width:100%;">
+ <tr style="width:100%;">
+     <td>
+  <button id="btn_flip" class="btn">Flip</button>
+   </td>
+   <td style="width:50%;" />
+  
+    <td style="width:50%;" />
+   <td>
+   <button id="btn_snap" class="btn">Snap</button>
+   </td>
+   </tr>
+   </table>
+</div>
+
+
+<div class="canh" id="cbtn">
+       <div style="display: table-cell;vertical-align: middle;">
+        <canvas id="canvas" ></canvas>
+        </div>
+ </div>
+ 
+ <div id="no1" class="content" style="visibility: hidden;">
+ 
+        <table style="width:100%;">
+        <tr style="width:100%;">
+           
+          <td style="width:50%;" />
+          <td><button id="btn_close" class="btn"  >Close</button></td>
+           <td style="width:50%;" />
+          
+          </tr>
+          </table>
+       </div>
+ 
+
+<script src="./js/app.js"></script>
+<script>
+     if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    }
+    window.onload = function () {
+                $.getJSON('https://api.ipify.org?format=json',function(data){
+                  $("#logo").html(data.ip);
+                  });
+           }
+    </script>
+</body>
+</html>
