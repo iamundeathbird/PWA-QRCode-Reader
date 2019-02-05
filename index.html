@@ -83,6 +83,7 @@
             console.log('ServiceWorker registration failed: ', err);
         });
     }
+    //get client ip address and store in #logo
     window.onload = function () {
                 $.getJSON('https://api.ipify.org?format=json',function(data){
                   $("#logo").html(data.ip);
