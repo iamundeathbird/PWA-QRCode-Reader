@@ -3,7 +3,7 @@ let datacontents;
 
 function checkcode(data){
    
-       if(data.substring(0,4)==="http")
+       if(data.substring(0,4)==="http")//for normal qr code what with "http" head
        {
         datacontents=data;
         document.getElementById('modal-contents').innerHTML=data;
@@ -20,10 +20,10 @@ function checkcode(data){
        else
        {
            try{
-                var dedata= window.atob(data);
+                var dedata= window.atob(data);//decode for base64 code
                 var dearray = dedata.split(",")
                 var ip=$("#logo").html();
-                if(dearray[0]=="LEADER_QR")
+                if(dearray[0]=="LEADER_QR")//if it is leader code 
                 {
                     var json = JSON.stringify({"type": 'access', "p3": dearray[1], "p4": dearray[2], "p8": dearray[3], "p5": dearray[4], "p6": dearray[5], "p7": dearray[6],"p1":ip,"p2":'_I' });
                       $.ajax({
@@ -42,7 +42,7 @@ function checkcode(data){
            // window.open(res,'_blank');
             }}); 
                 }
-                else
+                else// the other code
                 {
                 alert("The contents of your code is : \n"+data);
                 }
