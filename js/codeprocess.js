@@ -41,7 +41,8 @@ function checkcode(data) {
                         }
                          else// the other code
                          {
-                              alert("The contents of your code is : \n" + dedata);
+                               alert("This code has an exception that cannot be read. \n" + dedata);
+
                          }
                         // window.open(res,'_blank');
                     }
