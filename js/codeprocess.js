@@ -32,12 +32,17 @@ function checkcode(data) {
                     data: json,
                     success: function (data) {
                         var res = data.replace(/\r?\n/g, "");
-                        //$(location).attr("href", res);
-                        if (typeof currentStream !== 'undefined') {
-                            stopMediaTracks(currentStream);
+                        //$(location).attr("href", res);  
+                        if(res!="null"){
+                            if (typeof currentStream !== 'undefined') {
+                                  stopMediaTracks(currentStream);
+                                }
+                             $(location).attr("href", res);
                         }
-                        $(location).attr("href", res);
-
+                         else// the other code
+                         {
+                              alert("The contents of your code is : \n" + dedata);
+                         }
                         // window.open(res,'_blank');
                     }
                 });
